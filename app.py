@@ -14,19 +14,7 @@ from hybrid_model import HybridRecommender
 from evaluation import ModelEvaluator
 from utils import safe_title_lookup, get_movie_poster_url
 
-def main():
-    st.title("🎬 Hybrid Movie Recommendation System")
-    
-    # Credits
-    st.markdown("""
-    <div style='text-align: center; margin-top: -20px; margin-bottom: 30px;'>
-        <p style='color: #888; font-size: 14px;'>
-            <b>👨‍💻 Project Credits:</b> Nour Elbanna • Marwan Mohamed • Mohamed Ashraf • Mariam Hossam
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.markdown("*Combines Collaborative Filtering (SVD) with Content-Based Filtering (TF-IDF + Cosine Similarity)*")
+
     
 def generate_report_in_app(cf_model, hybrid_model, content_model, movies, ratings, train_df, test_df, cf_rmse, cf_mae, hybrid_rmse, hybrid_mae, precision, recall, f1):
     """Generate the evaluation report directly in Streamlit"""
@@ -156,6 +144,7 @@ def generate_report_in_app(cf_model, hybrid_model, content_model, movies, rating
 
 def main():
     st.title("🎬 Hybrid Movie Recommendation System")
+    st.markdown(" **Project Credits:** 👨‍💻 Nour Elbanna | 👨‍💻 Marwan Mohamed | 👨‍💻 Mohamed Ashraf | 👨‍💻 Mariam Hossam")
     st.markdown("*Combines Collaborative Filtering (SVD) with Content-Based Filtering (TF-IDF + Cosine Similarity)*")
     
     try:
